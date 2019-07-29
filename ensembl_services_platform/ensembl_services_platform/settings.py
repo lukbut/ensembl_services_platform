@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework'
+    'ensembl_services_platform.rest_endpoint.apps.RestEndpointConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +53,7 @@ MIDDLEWARE = [
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 25
 }
 
 ROOT_URLCONF = 'ensembl_services_platform.urls'

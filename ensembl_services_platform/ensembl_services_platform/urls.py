@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from ensembl_services_platform.rest_endpoint import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('gene_matcher/', views.GeneMatcher.as_view())
 ]
