@@ -91,7 +91,7 @@ DATABASES = {
         'USER': 'anonymous',
         'HOST': 'ensembldb.ensembl.org',
         'PORT': '3306'
-    }
+    },
 }
 
 
