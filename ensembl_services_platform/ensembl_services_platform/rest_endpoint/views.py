@@ -3,6 +3,9 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from ensembl_services_platform.rest_endpoint.models import GeneAutocomplete
+from ensembl_services_platform.rest_endpoint.serializers import GeneAutocompleteSerializer
+
 
 class GeneMatcher(APIView):
     """
@@ -15,6 +18,9 @@ class GeneMatcher(APIView):
     def get(self, request, lookup):
         species = self.request.query_params.get('species', None)
 
+        matching_genes = GeneAutocompleteSerializer(GeneAutocomplete.objects.filter(display_label__iregex=r'^'+lookup),
+                                                    many=True)
+
         if species:
             return Response(species)
-        return Response(lookup)
+        return Response(matching_genes.data)
