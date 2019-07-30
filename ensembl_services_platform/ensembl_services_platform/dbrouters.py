@@ -2,7 +2,7 @@
 def decide_on_model(model):
     """Helper function to ensure all operations of the gene_autocomplete model are piped to
      the ensembl_website_97 database """
-    return 'ensembl_website_97' if model._meta.app_label == 'gene_autocomplete' else None
+    return 'ensembl_website_97' if model._meta.app_label == 'rest_endpoint' else None
 
 
 class EnsemblWebsite97DbRouter:

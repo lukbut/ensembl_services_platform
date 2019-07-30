@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'ensembl_services_platform.rest_endpoint.apps.RestEndpointConfig',
     'rest_framework',
 ]
