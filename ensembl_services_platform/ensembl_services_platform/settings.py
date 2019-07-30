@@ -85,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     },
-    'ensembldb': {
+    'ensembl_website_97': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ensembl_website_97',
         'USER': 'anonymous',
@@ -94,6 +94,7 @@ DATABASES = {
     },
 }
 
+DATABASE_ROUTERS = ['ensembl_services_platform.dbrouters.EnsemblWebsite97DbRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
