@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -16,11 +15,14 @@ class GeneMatcher(APIView):
     renderer_classes = [JSONRenderer]
 
     def get(self, request, lookup):
+        # Retrieving query parameters
         species = self.request.query_params.get('species', None)
 
-        matching_genes = GeneAutocompleteSerializer(GeneAutocomplete.objects.filter(display_label__iregex=r'^'+lookup),
-                                                    many=True)
+        # Filtering on lookup value using case insensitive regex matching
+        matching_genes = GeneAutocomplete.objects.filter(display_label__iregex=r'^'+lookup)
 
+        # Adding further filtering
         if species:
-            return Response(species)
-        return Response(matching_genes.data)
+            matching_genes = matching_genes.filter(species=species)
+        # Serializing the result
+        return Response(GeneAutocompleteSerializer(matching_genes, many=True).data)
