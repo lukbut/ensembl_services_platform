@@ -1,3 +1,4 @@
+from django.core.exceptions import SuspiciousOperation
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -15,8 +16,12 @@ class GeneMatcher(APIView):
     renderer_classes = [JSONRenderer]
 
     def get(self, request, lookup):
-        # Retrieving query parameters
+        # Retrieving query parameter, species
         species = self.request.query_params.get('species', None)
+
+        # Validating parameters' length
+        if len(lookup) < 3 or species and len(species) < 3:
+            raise SuspiciousOperation('Parameter values require a length of 3 or more.')
 
         # Filtering on lookup value using case insensitive regex matching
         matching_genes = GeneAutocomplete.objects.filter(display_label__iregex=r'^'+lookup)

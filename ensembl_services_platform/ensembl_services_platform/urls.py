@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
+from django.views import defaults
 
 from ensembl_services_platform.rest_endpoint import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^gene_matcher/$', views.GeneMatcher.as_view()),
-    re_path(r'^gene_matcher/lookup/(?P<lookup>\w{0,2})/$', views.GeneMatcher.as_view()), #TODO: Continue adding limiting of lookup value length
-    re_path(r'^gene_matcher/lookup/(?P<lookup>\w{3,})/$', views.GeneMatcher.as_view()),
+    re_path(r'^genes/$', views.GeneMatcher.as_view()),
+    re_path(r'^genes/lookup$', views.GeneMatcher.as_view()),
+    re_path(r'^genes/lookup/(?P<lookup>\w*)$', views.GeneMatcher.as_view()),
 ]
