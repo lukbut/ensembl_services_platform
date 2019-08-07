@@ -6,7 +6,7 @@ endpoint's use, including accepted parameters.
 
 <h3>Genes Endpoint Example</h3>
 
-[/genes/lookup/hel?species=homo_sapiens](127.0.0.1/genes/lookup/hel?species=homo_sapiens)
+<code>/genes/lookup/hel?species=homo_sapiens</code>
 
 * "hel" is a mandatory gene lookup query, passed as a path parameter
 * "homo_sapiens" is an optional query parameter to filter on species
