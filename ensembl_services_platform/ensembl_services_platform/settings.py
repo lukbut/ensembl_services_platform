@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '&vc%r_r^1g*!ye5lpjvzf7ea(-pu$t*$km(7c@sv3+3$34ns+1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
+    'ensembl_services_platform.rest_endpoint.apps.RestEndpointConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +51,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 25
+}
 
 ROOT_URLCONF = 'ensembl_services_platform.urls'
 
@@ -77,9 +85,17 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    },
+    'ensembl_website_97': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ensembl_website_97',
+        'USER': 'anonymous',
+        'HOST': 'ensembldb.ensembl.org',
+        'PORT': '3306'
+    },
 }
 
+DATABASE_ROUTERS = ['ensembl_services_platform.dbrouters.EnsemblWebsite97DbRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

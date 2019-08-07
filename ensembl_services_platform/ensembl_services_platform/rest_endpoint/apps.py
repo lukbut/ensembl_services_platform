@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class RestEndpointConfig(AppConfig):
-    name = 'rest_endpoint'
+    name = 'ensembl_services_platform.rest_endpoint'
