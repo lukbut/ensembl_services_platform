@@ -94,18 +94,20 @@ A database router was defined to ensure all operations of the
 
 <h3>Setting up the environment</h3>
 
+The following notes will assist a user in setting up the endpoint on a
+MacOS computer for testing purposes.
+
 A `requirements.txt` file is available for easy setup of a site specific
 Python virtual environment.
 
-`mysql`, `openssl` and `mysql-connector-c` was installed on the development MacOS computer via 
+`mysql`, `openssl` and `mysql-connector-c` need to be installed via
 [Homebrew](https://brew.sh).
 
 `mysql-connector-c` currently has a bug when used on MacOS. The settings
 file needs to be modified, as described in this link: 
 <https://pypi.org/project/mysqlclient/>
 
-The following additional commands need to be typed into bash
- to be set up `OpenSSL` on MacOS Mojave 
+The following additional commands need to be typed into bash to set up `OpenSSL` on MacOS Mojave 
 onwards:
 
     export CPPFLAGS="-I/usr/local/opt/openssl/include"
