@@ -107,6 +107,10 @@ for all tables in this Database for use with this project.
 A database router was defined to ensure all operations of the 
 `GeneAutocomplete` model are piped to the `ensembl_website_97` database.
 
+A serializer was defined to assist in creating the appropriate JSON
+representation of the GeneAutocomplete model instance objects which
+match the provided criteria.
+
 <h3>Setting up the environment</h3>
 
 The following notes will assist a user in setting up the endpoint on a
