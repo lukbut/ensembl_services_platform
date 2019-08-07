@@ -73,7 +73,7 @@ A Postman Collection has been published to assist with querying the API.
 The collection can be accessed from the following link:
 `https://www.getpostman.com/collections/ab2e10897deb4d350c43`
 
-<h3>Implementation</h3>
+<h3>Implementation Notes</h3>
 
 This REST API endpoint was created using Django and Django Rest Framework. 
 
@@ -83,7 +83,8 @@ of the `genes` endpoint. All files were automatically generated using
 inbuilt commands, and unused stubs were retained (including comments with
 instructions). 
 
-The data source of the application is the Ensembl Database. The Django 
+The data source of the application is the publicly available 
+Ensembl Database. The Django 
 utility `inspectdb` was used to generate models automatically for all
 tables in this Database for use with this project. A database router 
 was defined to ensure all operations of the `GeneAutocomplete` model are
