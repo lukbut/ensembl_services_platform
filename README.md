@@ -5,6 +5,21 @@ This guide provides a brief overview of the Ensembl Services Platform,
 which implements the <code>genes</code> endpoint. It describes the 
 endpoint's use, including accepted parameters.
 
+<h3>Genes Endpoint</h3>
+
+The putative "Ensembl Services Platform" allows users to search for a gene by its name. One web
+REST service is available on this platform to get all gene names corresponding to a pattern.
+The entry point accepts a string as parameter and return the list of matching genes in our
+database.
+
+For example, if the user submit brc a list of suggested gene names may be:
+• BRCA1
+• BRCA2
+• BRCC3
+• BRCC3P1
+
+Filtering on the gene's species is also available.
+
 <h3>Genes Endpoint Request Example</h3>
 
 <code>/genes/lookup/hel?species=homo_sapiens</code>
