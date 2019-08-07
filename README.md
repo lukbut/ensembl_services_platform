@@ -13,10 +13,10 @@ The entry point accepts a string as parameter and return the list of matching ge
 database.
 
 For example, if the user submit brc a list of suggested gene names may be:
-• BRCA1
-• BRCA2
-• BRCC3
-• BRCC3P1
+* BRCA1
+* BRCA2
+* BRCC3
+* BRCC3P1
 
 Filtering on the gene's species is also available.
 
