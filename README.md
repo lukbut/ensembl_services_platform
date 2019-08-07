@@ -133,7 +133,7 @@ onwards:
     export LDFLAGS="-L/usr/local/opt/openssl/lib"
     export PATH="/usr/local/opt/openssl/bin:$PATH"
 
-<h3>Known issues and assumptions</h3>
+<h3>Issues and assumptions</h3>
 
 1. ```display_name``` field was not found in the ```gene_autocomplete``` 
 table, so ```display_label``` was used instead.
@@ -143,9 +143,10 @@ denoted by the ```inspectdb``` command.
 3. It is assumed that both parameters need to be at least three 
 characters long.
 4. Species parameter was assumed to be an exact match only.
-5. Assumption that a list of JSON objects is an appropriate format. The
-fields returned were not renamed in any way (e.g. ```display_label``` 
-field was not renamed to "gene names").
+5. Assumption that a list of JSON objects is an appropriate response 
+format. 
+6. The fields returned were not renamed in any way (e.g. 
+```display_label``` field was not renamed to "gene names").
 
 <h3>References</h3>
 
