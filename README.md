@@ -145,7 +145,7 @@ characters long.
 4. Species parameter was assumed to be an exact match only.
 5. Assumption that a list of JSON objects is an appropriate response 
 format. 
-6. The fields returned were not renamed in any way (e.g. 
+6. The response fields returned were not renamed in any way (e.g. 
 ```display_label``` field was not renamed to "gene names").
 
 <h3>References</h3>
