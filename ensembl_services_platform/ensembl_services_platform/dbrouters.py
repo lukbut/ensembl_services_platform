@@ -1,6 +1,6 @@
 # Inspired from https://datascience.blog.wzb.eu/2017/03/21/using-django-with-an-existinglegacy-database/
 def decide_on_model(model):
-    """Helper function to ensure all operations of the gene_autocomplete model are piped to
+    """Helper function to ensure all operations of the GeneAutocomplete model are piped to
      the ensembl_website_97 database """
     return 'ensembl_website_97' if model._meta.app_label == 'rest_endpoint' else None
 
